@@ -1,0 +1,17 @@
+#! /bin/bash
+
+theme_dir=~/shell_config/iTerm2-Color-Schemes/terminator
+echo $theme_dir
+action=$1
+theme=$2
+if [ $action == 'add' ]
+  then
+    sed -e '/\[layouts\]/ {
+        h
+        r '$theme_dir/${theme}.config'
+        g
+        N
+    }' \
+    ~/shell_config/terminator_config \
+    | sed -e '/^$/ d' -e 's/^\[\[.*\]\]/  &/'
+fi
