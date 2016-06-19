@@ -1,4 +1,4 @@
-# Path to your oh-my-zsh installation.
+# Path to you oh-my-zsh installation.
 export ZSH=$HOME/shell_config/oh-my-zsh
 
 # Set name of the theme to load.
@@ -7,6 +7,12 @@ export ZSH=$HOME/shell_config/oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bureau"
 
+# Personal config ------------
+# Powerline
+if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
+# ----------------------------
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -52,7 +58,7 @@ ZSH_THEME="bureau"
 plugins=(git)
 
 # User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/bin:~/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/bin:~/bin:~/.local/bin"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
