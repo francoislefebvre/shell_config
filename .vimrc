@@ -14,18 +14,24 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
-
-
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'bpearson/vim-phpcs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
+" Config for syntastic
 let g:syntastic_php_checkers = ['php']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
+" Config for PHP_CodeSniffer
+let Vimphpcs_Standard='~/dev/wpcs/WordPress'
 
 " hide buffer by default
 set hidden
