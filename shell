@@ -1,17 +1,25 @@
 #! /bin/bash
 
-theme_dir=~/shell_config/iTerm2-Color-Schemes/terminator
-echo $theme_dir
+SHELL_CONF_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+THEME_DIR=$shell_config_dir/iTerm2-Color-Schemes/terminator
+
 action=$1
 theme=$2
-if [ $action == 'add' ]
+
+if [ -z ${action+x} ]
+then
+  if [ $action == 'install' ]
+  then
+    vim "+let &runtimepath.='$SHELL_CONF_DIR/vim' +qall"
+  elif [[ -z ${theme+x} && $action == 'add' ]]
   then
     sed -e '/\[layouts\]/ {
         h
-        r '$theme_dir/${theme}.config'
+        r '$THEME_DIR/${theme}.config'
         g
         N
     }' \
     ~/shell_config/terminator_config \
     | sed -e '/^$/ d' -e 's/^\[\[.*\]\]/  &/'
+  fi
 fi
