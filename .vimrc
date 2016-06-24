@@ -30,9 +30,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
-" Config for PHP_CodeSniffer
-let Vimphpcs_Standard='~/dev/wpcs/WordPress'
-
 " hide buffer by default
 set hidden
 

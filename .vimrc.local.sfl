@@ -1,0 +1,3 @@
+" Config for PHP_CodeSniffer
+let Vimphpcs_Standard='~/dev/wpcs/WordPress'
+
