@@ -10,7 +10,7 @@ if [ -z ${action+x} ]
 then
   if [ $action == 'install' ]
   then
-    vim "+let &runtimepath.='$SHELL_CONF_DIR/vim' +qall"
+    sudo apt-get install exuberant-ctags
   elif [[ -z ${theme+x} && $action == 'add' ]]
   then
     sed -e '/\[layouts\]/ {

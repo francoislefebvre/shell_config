@@ -12,14 +12,25 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+" Syntax
 Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
+
+" Navigation
+Plugin 'kien/ctrlp.vim' " Fuzzy find files
+Plugin 'scrooloose/nerdtree' " Browse files and dirs
+Plugin 'majutsushi/tagbar' " Browse code
+
+" Edit and move functions
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdcommenter'
+
+" Version control
+Plugin 'tpope/vim-fugitive' " Git
+
+" Status line
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'bpearson/vim-phpcs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

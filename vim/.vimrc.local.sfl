@@ -1,3 +1,4 @@
-" Config for PHP_CodeSniffer
+" PHP_CodeSniffer
+Plugin 'bpearson/vim-phpcs'
 let Vimphpcs_Standard='~/dev/wpcs/WordPress'
 
