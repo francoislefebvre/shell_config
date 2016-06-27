@@ -75,4 +75,19 @@ set directory=~/.vimswap
 set undofile
 set undodir=~/.vimundo
 
+" Restore cursor position
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
 
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
+
+if filereadable(glob("~/.vimrc.local")) 
+    source ~/.vimrc.local
+endif
