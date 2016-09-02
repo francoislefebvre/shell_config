@@ -58,7 +58,7 @@ fi
 plugins=(git)
 
 # User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/bin:$HOME/bin:$HOME/.local/bin:$HOME/.composer/vendor/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/bin:$HOME/bin:$HOME/.local/bin:$HOME/.config/composer/vendor/bin"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

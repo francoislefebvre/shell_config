@@ -4,6 +4,8 @@ set timeout timeoutlen=10000
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+:nnoremap <Leader>nt :NERDTree <CR>
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -13,8 +15,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Syntax
+" Syntax checking
 Plugin 'scrooloose/syntastic'
+
+" Syntax coloring
+Plugin 'beyondwords/vim-twig'
 
 " Navigation
 Plugin 'kien/ctrlp.vim' " Fuzzy find files
@@ -27,6 +32,7 @@ Plugin 'scrooloose/nerdcommenter'
 
 " Version control
 Plugin 'tpope/vim-fugitive' " Git
+Plugin 'airblade/vim-gitgutter'
 
 " Status line
 Plugin 'bling/vim-airline'
@@ -68,6 +74,8 @@ filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 set backupdir=~/.vimswap
 set directory=~/.vimswap
