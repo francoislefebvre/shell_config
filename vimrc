@@ -29,6 +29,7 @@ Plugin 'majutsushi/tagbar' " Browse code
 " Edit and move functions
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'jiangmiao/auto-pairs'
 
 " Version control
 Plugin 'tpope/vim-fugitive' " Git
@@ -75,7 +76,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:¬,tab:>-,trail:·,extends:>,precedes:<
+set list
 
 set backupdir=~/.vimswap
 set directory=~/.vimswap
