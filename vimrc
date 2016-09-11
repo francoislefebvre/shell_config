@@ -15,6 +15,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Autocompletion
+Plugin 'ervandew/supertab'
+
 " Syntax checking
 Plugin 'scrooloose/syntastic'
 
@@ -48,6 +51,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
+
+" Enable omni completion (necessary for valloric/youcompleteme)
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " Color
 set t_Co=256
