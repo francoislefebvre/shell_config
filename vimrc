@@ -6,6 +6,26 @@ filetype off                  " required
 
 :nnoremap <Leader>nt :NERDTree <CR>
 
+"-------------Mappings----------------------"
+
+" Simple highlight removal
+nmap <Leader><space> :set nohlsearch<cr>
+
+"-------------Search------------------------"
+set hlsearch
+set incsearch
+
+"-------------Auto-commands-----------------"
+
+" Automatically source .vimrc on save
+
+augroup autosourcing
+    autocmd!
+    autocmd BufWritePost .vimrc source %
+augroup END
+
+"-------------Plugins-setup-----------------"
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
