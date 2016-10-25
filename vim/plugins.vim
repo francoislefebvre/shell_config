@@ -12,8 +12,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Autocompletion
 Plugin 'ervandew/supertab'
 
-" Syntax checking
+" Syntax and code style checking
 Plugin 'scrooloose/syntastic'
+Plugin 'editor/editorconfig-vim'
 
 " Syntax coloring
 Plugin 'beyondwords/vim-twig'
