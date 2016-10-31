@@ -5,11 +5,13 @@ set timeout timeoutlen=10000
 
 " Get latest Vim settings/options
 
-set nocompatible
 
 " Plugins ---------------------------------------
 
+set nocompatible
+filetype off
 source ~/shell_config/vim/plugins.vim
+filetype plugin indent on
 
 " Mappings ------------------------------------
 
@@ -78,7 +80,6 @@ set showcmd
 "/
 "/ Tabulation and invisibles
 "/
-filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -123,6 +124,7 @@ let g:syntastic_check_on_wq = 1
 "/ Editor Config
 "/
 let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " Source local settings -------------------------
 
