@@ -14,7 +14,7 @@ Plugin 'ervandew/supertab'
 
 " Syntax and code style checking
 Plugin 'scrooloose/syntastic'
-Plugin 'editor/editorconfig-vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 " Syntax coloring
 Plugin 'beyondwords/vim-twig'
