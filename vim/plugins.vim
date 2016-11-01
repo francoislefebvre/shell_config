@@ -12,7 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Autocompletion
 Plugin 'ervandew/supertab'
 
-" Syntax checking
+" Syntax and code style checking
 Plugin 'bpearson/vim-phpcs'
 Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'

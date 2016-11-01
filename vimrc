@@ -121,7 +121,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
 "/
-"/ EditorConfig
+"/ Editor Config
 "/
 let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
