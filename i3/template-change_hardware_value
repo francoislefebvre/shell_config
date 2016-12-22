@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# macbook screen backlight
+#DIR=/sys/class/backlight/gmux_backlight
+#PROPERTY=brightness
+#VALUE=$(cat $DIR/$PROPERTY)
+#MAX=82311 # cat $DIR/max_$PROPERTY
+#INCREMENT=15000
+
+
+# macbook keyboard backlight
+#DIR=/sys/class/leds/smc::kbd_backlight
+#PROPERTY=brightness
+#VALUE=$(cat $DIR/$PROPERTY)
+#MAX=255 # cat $DIR/max_$PROPERTY
+#INCREMENT=32
+
+# macbook sound
+#UP_COMMAND="amixer -D pulse sset Master 5%+"
+#DOWN_COMMAND="amixer -D pulse sset Master 5%-"
+#FULL_COMMAND="amixer -D pulse sset Master 100%"
+#OFF_COMMAND="amixer -D pulse sset Master 0"
+
+TOTAL=unset
+COMMAND=unset
+
+if [ -v UP_COMMAND ]; then
+    case $1 in up)
+        COMMAND=$UP_COMMAND
+        ;;
+    down)
+        COMMAND=$DOWN_COMMAND
+        ;;
+    full)
+        COMMAND=$FULL_COMMAND
+        ;;
+    off)
+        COMMAND=$OFF_COMMAND
+        ;;
+    esac;
+elif [ -v VALUE ]; then
+    case $1 in up)
+        TOTAL=`expr $VALUE + $INCREMENT`
+        ;;
+    down)
+        TOTAL=`expr $VALUE - $INCREMENT`
+        ;;
+    full)
+        TOTAL=$MAX
+        ;;
+    off)
+        TOTAL=0
+        ;;
+    esac
+fi
+
+if [ $TOTAL == unset ] && [ "$COMMAND" == unset ]; then
+    echo "Please specify up, down, full, or off"
+    exit 1
+fi
+
+if ! [ $TOTAL == unset ]; then
+    if [ $TOTAL -gt $MAX  ]; then TOTAL=$MAX; fi
+    if [ $TOTAL -lt 0  ]; then TOTAL=0; fi 
+    echo $TOTAL > $DIR/$PROPERTY
+    #echo $TOTAL; echo $DIR/$PROPERTY
+else
+    exec $COMMAND
+    #echo $COMMAND
+fi
