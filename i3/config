@@ -157,18 +157,14 @@ bar {
 
 exec --no-startup-id nm-applet
 
-#increase sound volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && pkill -SIGRTMIN+10 i3blocks
-
-#decrease sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && pkill -SIGRTMIN+10 i3blocks
-
-#mute
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 0 toggle && pkill -SIGRTMIN+10 i3blocks
+# Sound volume
+bindsym XF86AudioRaiseVolume exec sound-volume up && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec sound-volume down && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioMute exec sound-volume off && pkill -SIGRTMIN+10 i3blocks
 
 # Sreen brightness controls
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec screen-backlight up # increase screen brightness
+bindsym XF86MonBrightnessDown exec screen-backlight down # decrease screen brightness
 
 # Keyboard brightness controls
 bindsym XF86KbdBrightnessUp exec keyboard-backlight up  # increase screen brightness
