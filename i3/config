@@ -169,3 +169,9 @@ bindsym XF86MonBrightnessDown exec --no-startup-id screen-backlight down # decre
 # Keyboard brightness controls
 bindsym XF86KbdBrightnessUp exec --no-startup-id keyboard-backlight up  # increase screen brightness
 bindsym XF86KbdBrightnessDown exec --no-startup-id keyboard-backlight down # decrease screen brightness
+
+# Monitor assignment
+#workspace 1 output DP-2
+#workspace 2 output LVDS-1
+bindsym $mod+Shift+M exec --no-startup-id refresh-monitors
+

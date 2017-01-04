@@ -1,0 +1,14 @@
+#!/bin/bash
+INTERNAL_OUTPUT="LVDS-1"
+EXTERNAL_OUTPUT="DP-2"
+RELATIVE_POSITION_OF_EXTERNAL="above" # right-of, left-of, above, below, same-as
+
+EXTERNAL_CONNECTED=$(xrandr | awk '/'$EXTERNAL_OUTPUT' connected/ {print $1}');
+
+if ! [ -z $EXTERNAL_CONNECTED ]; then
+    xrandr --output $EXTERNAL_OUTPUT --$RELATIVE_POSITION_OF_EXTERNAL $INTERNAL_OUTPUT --auto --primary
+else
+    xrandr --output $EXTERNAL_OUTPUT --off;
+fi
+
+
