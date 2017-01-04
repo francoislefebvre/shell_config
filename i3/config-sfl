@@ -179,3 +179,10 @@ bindsym XF86KbdBrightnessDown exec keyboard-backlight down # decrease screen bri
 #--------------------------------#
 
 exec xrandr --output LVDS1 --mode 1360x768
+
+# Monitor assignment
+workspace 1 output HDMI1
+workspace 2 output LVDS1
+workspace 3 output HDMI1
+workspace 4 output LVDS1
+
