@@ -13,7 +13,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ervandew/supertab'
 
 " Syntax and code style checking
-Plugin 'bpearson/vim-phpcs'
+" Plugin 'bpearson/vim-phpcs' Should be placed elsewhere for local
+" installations
 Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
 
