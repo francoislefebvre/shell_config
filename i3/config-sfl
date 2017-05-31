@@ -171,18 +171,42 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 0 toggle &
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Keyboard brightness controls
-bindsym XF86KbdBrightnessUp exec keyboard-backlight up  # increase screen brightness
-bindsym XF86KbdBrightnessDown exec keyboard-backlight down # decrease screen brightness
+bindsym XF86KbdBrightnessUp exec --no-startup-id keyboard-backlight up  # increase screen brightness
+bindsym XF86KbdBrightnessDown exec --no-startup-id keyboard-backlight down # decrease screen brightness
+
+bindsym $mod+Shift+m exec --no-startup-id refresh-monitors
+bindsym $mod+Shift+p exec --no-startup-id i3lock --dpms
+
+bindsym $mod+minus move scratchpad
+bindsym $mod+Shift+minus scratchpad show
+
+bindsym $mod+Tab workspace back_and_forth
+
+bindsym $mod+Shift+F exec --no-startup-id setxkbmap ca
+bindsym $mod+Shift+U exec --no-startup-id setxkbmap us
 
 #--------------------------------#
 # Local setup
 #--------------------------------#
 
-exec xrandr --output LVDS1 --mode 1360x768
+exec --no-startup-id refresh-monitors
+
+exec --no-startup-id i3-msg 'workspace 9; exec gnome-ring'
+exec --no-startup-id i3-msg 'workspace 10; exec hexchat'
+exec --no-startup-id i3-msg 'workspace 10; exec thunderbird'
+exec --no-startup-id i3-msg 'workspace 6; exec firefox'
+exec --no-startup-id i3-msg 'workspace 1; exec terminator'
+
 
 # Monitor assignment
-workspace 1 output HDMI1
+workspace 1 output LVDS1
 workspace 2 output LVDS1
-workspace 3 output HDMI1
+workspace 3 output LVDS1
 workspace 4 output LVDS1
+workspace 5 output LVDS1
+workspace 6 output HDMI2
+workspace 7 output HDMI2
+workspace 8 output HDMI2
+workspace 9 output HDMI2
+workspace 10 output HDMI2
 

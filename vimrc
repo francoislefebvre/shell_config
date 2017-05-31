@@ -34,6 +34,9 @@ nmap <Leader><space> :set nohlsearch<cr>
 "--- Open buffer in split ---
 nmap <Leader>so :vert sb<space>
 
+"--- Close buffer without closing the window ---
+nmap <C-W>! <Plug>Kwbd
+
 " Auto-commands ---------------------------------
 
 " Automatically source .vimrc on save
@@ -126,6 +129,11 @@ let g:syntastic_check_on_wq = 1
 let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 "let g:EditorConfig_verbose=1
+"
+"/
+"/ Code Sniffer
+"/
+let Vimphpcs_Standard='~/.config/composer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PSR2'
 
 " Source local settings -------------------------
 

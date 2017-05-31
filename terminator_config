@@ -2,17 +2,6 @@
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   inactive_color_offset = 1.0
 [keybindings]
-[profiles]
-  [[default]]
-    palette = "#171717:#ff615a:#b1e969:#35c15a:#5da9f6:#e86aff:#82fff7:#dedacf:#313131:#f58c80:#ddf88f:#eee5b2:#a5c7ff:#ddaaff:#b7fff9:#ffffff"
-    background_image = None
-    scrollback_lines = 10000
-    use_system_font = False
-    cursor_color = "#bbbbbb"
-    foreground_color = "#dedacf"
-    scroll_on_output = False
-    font = Monospace 11
-    background_color = "#171717"
 [layouts]
   [[default]]
     [[[child1]]]
@@ -23,3 +12,14 @@
       parent = ""
       type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_color = "#171717"
+    background_image = None
+    cursor_color = "#bbbbbb"
+    font = Monospace 10
+    foreground_color = "#dedacf"
+    palette = "#171717:#ff615a:#b1e969:#35c15a:#5da9f6:#e86aff:#82fff7:#dedacf:#313131:#f58c80:#ddf88f:#eee5b2:#a5c7ff:#ddaaff:#b7fff9:#ffffff"
+    scroll_on_output = False
+    scrollback_lines = 10000
+    use_system_font = False

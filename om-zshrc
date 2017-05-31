@@ -88,6 +88,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+sflwho() {
+    ldapsearch -x -h ldap.savoirfairelinux.com -s sub -b 'dc=savoirfairelinux,dc=net' "uid=$1"
+}
 
 export NVM_DIR="/home/flefebvre/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+alias trash="trash-put"
