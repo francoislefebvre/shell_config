@@ -1,0 +1,2 @@
+" Vdebug
+Plugin 'joonty/vdebug'

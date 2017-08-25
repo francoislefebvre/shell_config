@@ -10,10 +10,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Autocompletion
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
 
 " Syntax and code style checking
-Plugin 'bpearson/vim-phpcs' " Should be placed elsewhere for local
+" Plugin 'bpearson/vim-phpcs' Should be placed elsewhere for local
 " installations
 Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
@@ -39,6 +40,10 @@ Plugin 'airblade/vim-gitgutter'
 " Status line
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+if filereadable(glob("~/.vimrc.plugins.local")) 
+    source ~/.vimrc.plugins.local
+endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

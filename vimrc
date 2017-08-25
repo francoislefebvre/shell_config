@@ -10,7 +10,7 @@ set timeout timeoutlen=10000
 
 set nocompatible
 filetype off
-source ~/shell_config/vim/plugins.vim
+source ~/shell_config/vim/plugins/defaults.vim
 filetype plugin indent on
 
 " Mappings ------------------------------------
@@ -47,6 +47,12 @@ augroup autosourcing
 augroup END
 
 " VIM options -----------------------------------
+"
+"/
+"/ Vdebug
+"/
+
+let g:vdebug_options = {}
 
 "/
 "/ Splits
@@ -112,6 +118,12 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
+" Python config
+au BufNewFile,BufRead *.py set textwidth=79 fileformat=unix
+
+"python with virtualenv support
+let g:ycm_python_binary_path = $VIRTUAL_ENV . "/bin/python"
+
 " Plugins options -------------------------------
 
 "/
@@ -130,11 +142,6 @@ let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 "let g:EditorConfig_verbose=1
 "
-"/
-"/ Code Sniffer
-"/
-let Vimphpcs_Standard='~/.config/composer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PSR2'
-
 " Source local settings -------------------------
 
 if filereadable(glob("~/.vimrc.local")) 
