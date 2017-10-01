@@ -119,12 +119,20 @@ augroup resCur
 augroup END
 
 " Python config
-au BufNewFile,BufRead *.py set textwidth=79 fileformat=unix
+"au BufNewFile,BufRead *.py set textwidth=79 fileformat=unix
 
 "python with virtualenv support
 let g:ycm_python_binary_path = $VIRTUAL_ENV . "/bin/python"
 
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>gd :YcmCompleter GetDoc<CR>
+
 " Plugins options -------------------------------
+
+"/
+"/ NERDTree
+"/
+let NERDTreeIgnore=['\.pyc$']
 
 "/
 "/ Syntastic
@@ -134,6 +142,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
+"let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501'
 
 "/
 "/ Editor Config
