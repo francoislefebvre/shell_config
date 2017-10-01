@@ -10,7 +10,7 @@ set timeout timeoutlen=10000
 
 set nocompatible
 filetype off
-source ~/shell_config/vim/plugins/defaults.vim
+source $SHELL_CONFIG_PATH/vim/plugins/defaults.vim
 filetype plugin indent on
 
 " Mappings ------------------------------------
@@ -72,7 +72,7 @@ set incsearch
 " Colors
 set t_Co=256
 set background=dark
-let &runtimepath.=',~/shell_config/vim'
+let &runtimepath.="," . $SHELL_CONFIG_PATH . "/vim"
 colors Tomorrow-Night
 
 " Status line
