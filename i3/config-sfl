@@ -193,9 +193,9 @@ exec --no-startup-id refresh-monitors
 
 #exec --no-startup-id i3-msg 'workspace 9; exec gnome-ring'
 #exec --no-startup-id i3-msg 'workspace 10; exec hexchat'
-exec --no-startup-id i3-msg 'workspace 5; exec thunderbird'
-exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 exec --no-startup-id i3-msg 'workspace 6; exec terminator'
+exec --no-startup-id i3-msg 'workspace 7; exec firefox'
+exec --no-startup-id i3-msg 'workspace 0; exec thunderbird'
 
 
 # Monitor assignment
