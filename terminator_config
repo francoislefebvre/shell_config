@@ -15,11 +15,9 @@
 [profiles]
   [[default]]
     background_color = "#171717"
-    background_image = None
     cursor_color = "#bbbbbb"
-    font = Monospace 10
+    font = Monospace 13
     foreground_color = "#dedacf"
     palette = "#171717:#ff615a:#b1e969:#35c15a:#5da9f6:#e86aff:#82fff7:#dedacf:#313131:#f58c80:#ddf88f:#eee5b2:#a5c7ff:#ddaaff:#b7fff9:#ffffff"
-    scroll_on_output = False
     scrollback_lines = 10000
     use_system_font = False
