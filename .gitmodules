@@ -1,6 +1,3 @@
-[submodule "ProVim"]
-	path = ProVim
-	url = https://github.com/francoislefebvre/ProVim.git
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
