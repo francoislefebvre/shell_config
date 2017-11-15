@@ -1,7 +1,7 @@
 if [ -s $HOME"/.zshrc.local" ]; then
     source $HOME/.zshrc.local
 else 
-    export SHELL_CONFIG_PATH=$HOME/shell_config
+    export SHELL_CONFIG_PATH=$HOME/.config/shell
 fi
 
 # Path to you oh-my-zsh installation.
