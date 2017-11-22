@@ -9,9 +9,9 @@ set timeout timeoutlen=10000
 " Plugins ---------------------------------------
 
 set nocompatible
-filetype off
 source $SHELL_CONFIG_PATH/vim/plugins/defaults.vim
 filetype plugin indent on
+syntax on
 
 " Mappings ------------------------------------
 
