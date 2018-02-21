@@ -27,6 +27,7 @@ Plugin 'kien/ctrlp.vim' " Fuzzy find files
 Plugin 'scrooloose/nerdtree' " Browse files and dirs
 Plugin 'majutsushi/tagbar' " Browse code
 Plugin 'rking/ag.vim' " Integration for ag
+Plugin 'bkad/CamelCaseMotion' " CamelCase and under_score navigation
 
 " Edit and move functions
 Plugin 'terryma/vim-multiple-cursors'

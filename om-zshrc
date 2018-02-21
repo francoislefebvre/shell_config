@@ -7,6 +7,9 @@ fi
 # Path to you oh-my-zsh installation.
 export ZSH=$SHELL_CONFIG_PATH/oh-my-zsh
 
+# Enable virtualenv prompt
+export VIRTUAL_ENV_DISABLE_PROMPT=""
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -99,7 +102,7 @@ sflwho() {
     ldapsearch -x -h ldap.savoirfairelinux.com -s sub -b 'dc=savoirfairelinux,dc=net' "uid=$1"
 }
 
-export NVM_DIR="/home/flefebvre/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

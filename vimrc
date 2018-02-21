@@ -152,6 +152,11 @@ let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 "let g:EditorConfig_verbose=1
 "
+"/
+"/ CamelCaseMotion
+"/
+call camelcasemotion#CreateMotionMappings('<leader>')
+
 " Source local settings -------------------------
 
 if filereadable(glob("~/.vimrc.local")) 
