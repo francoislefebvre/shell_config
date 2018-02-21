@@ -7,6 +7,7 @@ import json
 import subprocess
 from collections import namedtuple
 
+positions = {'eDP1': '--left-of HDMI2'}
 setup = {}
 
 class Resolution(object):
@@ -79,8 +80,11 @@ def get_monitor_options(focused_monitor, direction):
             current = setup[monitor]['current']
             resolution_name = getattr(
                 setup[monitor]['resolutions'][current], direction)
-        monitor_options.append(
-            get_option(monitor, resolution_name))
+        if resolution_name:
+            monitor_options.append(
+                get_option(monitor, resolution_name))
+            if monitor in positions:
+                monitor_options.append(positions[monitor])
     return monitor_options
 
 
