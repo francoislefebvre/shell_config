@@ -3,6 +3,7 @@
 import os
 import re
 import sys
+import json
 import subprocess
 from collections import namedtuple
 
@@ -19,11 +20,7 @@ class Resolution(object):
 
 
 def read_setup():
-    p = subprocess.Popen(
-        ['xrandr'],
-        stdout=subprocess.PIPE)
-
-    lines, junk = p.communicate()
+    lines = subprocess.check_output(['xrandr'])
 
     for line in lines.split('\n'):
         monitor_match = re.match('(\w+) connected', line)
@@ -54,12 +51,44 @@ def read_setup():
 
 
 def change_resolution(direction):
+    if direction == 'current':
+        for monitor in monitors:
+            print monitor, setup[monitor]['current']
+    else:
+        focused_monitor = None
+        try:
+            workspaces = json.loads(
+                subprocess.check_output('i3-msg -t get_workspaces', shell=True))
+            for workspace in workspaces:
+                if workspace['focused']:
+                    focused_monitor = workspace['output']
+                    break
+        except subprocess.CalledProcessError:
+            pass
+        monitors = [focused_monitor] if focused_monitor else setup
+        command = ' '.join(['xrandr'] + get_monitor_options(focused_monitor, direction))
+        os.system(command)
+
+
+def get_monitor_options(focused_monitor, direction):
+    monitor_options = []
     for monitor in setup:
-        current = setup[monitor]['current']
-        target_res = getattr(setup[monitor]['resolutions'][current], direction)
-        if target_res:
-            command = 'xrandr --output {} --mode {}'.format(monitor, target_res)
-            os.system(command)
+        if focused_monitor and monitor != focused_monitor:
+            resolution_name = setup[monitor]['current']
+        else:
+            current = setup[monitor]['current']
+            resolution_name = getattr(
+                setup[monitor]['resolutions'][current], direction)
+        monitor_options.append(
+            get_option(monitor, resolution_name))
+    return monitor_options
+
+
+def get_option(monitor_name, resolution_name):
+    return '--output {} --mode {}'.format(
+        monitor_name,
+        resolution_name)
+
 
 if __name__ == '__main__':
     read_setup()
