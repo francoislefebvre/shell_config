@@ -1,0 +1,10 @@
+#!/bin/bash
+EXTERNAL_CONNECTED=$(xrandr | awk '/'$EXTERNAL_OUTPUT' connected/ {print $1}');
+
+if ! [ -z $EXTERNAL_CONNECTED ]; then
+    xrandr --output DP-2   --auto --pos 0x0;
+    xrandr --output LVDS-1 --auto --pos 720x1080
+else
+    xrandr --output DP-2 --off;
+    xrandr --output LVDS-1 --auto
+fi

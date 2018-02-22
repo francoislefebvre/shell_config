@@ -9,22 +9,38 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-"Plugin 'jiangmiao/auto-pairs'
-Plugin 'rking/ag.vim' " Integration for ag
+" Autocompletion
+"Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
+
+" Syntax and code style checking
+" Plugin 'bpearson/vim-phpcs' Should be placed elsewhere for local
+" installations
+Plugin 'scrooloose/syntastic'
+Plugin 'editorconfig/editorconfig-vim'
+
+" Syntax coloring
+Plugin 'beyondwords/vim-twig'
+
+" Navigation
 Plugin 'kien/ctrlp.vim' " Fuzzy find files
-Plugin 'editorconfig/editorconfig-vim' " Editor config
-Plugin 'scrooloose/nerdcommenter' " Commenting
 Plugin 'scrooloose/nerdtree' " Browse files and dirs
 Plugin 'majutsushi/tagbar' " Browse code
-Plugin 'scrooloose/syntastic' " Syntax checking
-Plugin 'bling/vim-airline' " Status line
-Plugin 'vim-airline/vim-airline-themes' " Status line themes
-Plugin 'tpope/vim-fugitive' " Git integration
-Plugin 'airblade/vim-gitgutter' " Git line indicator
-"Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'gotcha/vimpdb' " Debugging
-Plugin 'beyondwords/vim-twig' " Twig syntax coloring
-Plugin 'Valloric/YouCompleteMe' " Autocompletion
+Plugin 'rking/ag.vim' " Integration for ag
+Plugin 'bkad/CamelCaseMotion' " CamelCase and under_score navigation
+
+" Edit and move functions
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'jiangmiao/auto-pairs'
+
+" Version control
+Plugin 'tpope/vim-fugitive' " Git
+Plugin 'airblade/vim-gitgutter'
+
+" Status line
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 if filereadable(glob("~/.vimrc.plugins.local")) 
     source ~/.vimrc.plugins.local

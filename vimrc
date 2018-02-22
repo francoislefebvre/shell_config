@@ -103,6 +103,11 @@ augroup END
 "au BufNewFile,BufRead *.py set textwidth=79 fileformat=unix
 
 "
+"/
+"/ CamelCaseMotion
+"/
+call camelcasemotion#CreateMotionMappings('<leader>')
+
 " Source local settings -------------------------
 
 if filereadable(glob("~/.vimrc.local")) 
