@@ -15,7 +15,7 @@ use Getopt::Long;
 my $t_warn = 50;
 my $t_crit = 80;
 my $cpu_usage = -1;
-my $decimals = 2;
+my $decimals = 0;
 
 sub help {
     print "Usage: cpu_usage [-w <warning>] [-c <critical>] [-d <decimals>]\n";
@@ -45,8 +45,8 @@ close(MPSTAT);
 $cpu_usage eq -1 and die 'Can\'t find CPU information';
 
 # Print short_text, full_text
-printf "%.${decimals}f%%\n", $cpu_usage;
-printf "%.${decimals}f%%\n", $cpu_usage;
+printf "%3.${decimals}f%%\n", $cpu_usage;
+printf "%3.${decimals}f%%\n", $cpu_usage;
 
 # Print color, if needed
 if ($cpu_usage >= $t_crit) {

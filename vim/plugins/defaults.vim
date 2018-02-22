@@ -48,4 +48,48 @@ endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required"
+filetype plugin indent on    " required
+
+"/
+"/ Airline
+"/
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'tomorrow'
+"/
+"/ Editor Config
+"/
+let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+"let g:EditorConfig_verbose=1
+"/
+"/ CrtlP
+nmap <Leader>f :CtrlPBufTag<CR>
+"/
+"/
+"/ NERDTree
+"/
+let NERDTreeIgnore=['\.pyc$']
+nmap <Leader>nt :NERDTreeToggle <CR>
+"/
+"/ VDebug
+"/
+let g:vdebug_options = {}
+"/
+"/ Syntastics
+"/
+let g:syntastic_php_checkers = ['php']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_sort_aggregated_errors = 1
+"let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501'
+execute "set colorcolumn=" . join(range(81,335), ',')
+"/
+"/ YouCompleteMe
+"/
+" python with virtualenv support
+let g:ycm_python_binary_path = $VIRTUAL_ENV . "/bin/python"
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>gd :YcmCompleter GetDoc<CR>

@@ -174,4 +174,6 @@ bindsym XF86KbdBrightnessDown exec --no-startup-id keyboard-backlight down # dec
 #workspace 1 output DP-2
 #workspace 2 output LVDS-1
 bindsym $mod+Shift+M exec --no-startup-id refresh-monitors
-bindsym $mod+Shift+P exec --no-startup-id i3lock -c 000000
+
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+exec_always --no-startup-id gnome-power-manager

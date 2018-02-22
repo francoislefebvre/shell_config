@@ -3,30 +3,20 @@
 let mapleader=','
 set timeout timeoutlen=10000
 
-" Get latest Vim settings/options
-
-
 " Plugins ---------------------------------------
 
 set nocompatible
-filetype off
 source $SHELL_CONFIG_PATH/vim/plugins/defaults.vim
 filetype plugin indent on
+syntax on
 
 " Mappings ------------------------------------
-
-"--- Nerd Tree Toggle ---
-nmap <Leader>nt :NERDTreeToggle <CR>
 
 "--- Window navigation ---
 nmap <C-H> <C-W>h
 nmap <C-L> <C-W>l
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
-
-"--- Search tags ---
-" sudo apt-get install ctags
-nmap <Leader>f :CtrlPBufTag<CR>
 
 "--- Simple highlight removal ---
 nmap <Leader><space> :set nohlsearch<cr>
@@ -46,13 +36,6 @@ augroup autosourcing
     "autocmd BufWritePost .vimrc source %
 augroup END
 
-" VIM options -----------------------------------
-"
-"/
-"/ Vdebug
-"/
-
-let g:vdebug_options = {}
 
 "/
 "/ Splits
@@ -77,8 +60,6 @@ colors Tomorrow-Night
 
 " Status line
 set laststatus=2
-let g:airline_powerline_fonts = 1
-    let g:airline_theme = 'tomorrow'
 
 set hidden
 set mouse=a
@@ -121,36 +102,6 @@ augroup END
 " Python config
 "au BufNewFile,BufRead *.py set textwidth=79 fileformat=unix
 
-"python with virtualenv support
-let g:ycm_python_binary_path = $VIRTUAL_ENV . "/bin/python"
-
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-nnoremap <leader>gd :YcmCompleter GetDoc<CR>
-
-" Plugins options -------------------------------
-
-"/
-"/ NERDTree
-"/
-let NERDTreeIgnore=['\.pyc$']
-
-"/
-"/ Syntastic
-"/
-let g:syntastic_php_checkers = ['php']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-"let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501'
-
-"/
-"/ Editor Config
-"/
-let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-"let g:EditorConfig_verbose=1
 "
 "/
 "/ CamelCaseMotion
