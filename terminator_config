@@ -1,4 +1,5 @@
 [global_config]
+  dbus = False
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   inactive_color_offset = 0.9
   scroll_tabbar = True
