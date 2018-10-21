@@ -25,7 +25,7 @@
     background_darkness = 0.9
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Noto Mono 11
+    font = Roboto Mono Medium 11
     foreground_color = "#dedacf"
     palette = "#2b2b2b:#ff615a:#b1e969:#35c15a:#5da9f6:#e86aff:#82fff7:#dedacf:#313131:#f58c80:#ddf88f:#eee5b2:#a5c7ff:#ddaaff:#b7fff9:#ffffff"
     scrollback_infinite = True
