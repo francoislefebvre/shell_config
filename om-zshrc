@@ -69,7 +69,6 @@ fi
 plugins=(git)
 
 # User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/bin:$HOME/bin:$HOME/.local/bin:$HOME/.config/composer/vendor/bin:$HOME/opt/bin"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -104,10 +103,6 @@ sflwho() {
     ldapsearch -x -h ldap.savoirfairelinux.com -s sub -b 'dc=savoirfairelinux,dc=net' "uid=$1"
 }
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 alias trash="trash-put"
 alias mv="mv -i"
 alias cp="cp -i"
