@@ -330,14 +330,14 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 # Monitor assignment
 workspace $ws1 output eDP1
 workspace $ws2 output eDP1
-workspace $ws3 output HDMI2
-workspace $ws4 output HDMI2
-workspace $ws5 output HDMI2
-workspace $ws6 output HDMI2
-workspace $ws7 output HDMI2
-workspace $ws8 output HDMI2
-workspace $ws9 output HDMI2
-workspace $ws10 output HDMI2
+workspace $ws3 output DP2-1
+workspace $ws4 output DP2-1
+workspace $ws5 output DP2-1
+workspace $ws6 output DP2-1
+workspace $ws7 output DP2-1
+workspace $ws8 output DP2-1
+workspace $ws9 output DP2-2
+workspace $ws10 output DP2-2
 
 exec --no-startup-id redshift-gtk -l 51.27:57.16
 
