@@ -93,11 +93,6 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-
-#bindsym $mod+Shift+p exec --no-startup-id i3lock -c 000000, mode "default"
-bindsym $mod+Shift+p exec --no-startup-id dm-tool lock
-bindsym $mod+Shift+m exec --no-startup-id refresh-monitors
-
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -121,8 +116,8 @@ bindsym $mod+a focus parent
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
-bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+#bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -151,18 +146,6 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
-# Move focused container to workspace
-#bindsym $mod+Shift+1 move container to workspace $ws1
-#bindsym $mod+Shift+2 move container to workspace $ws2
-#bindsym $mod+Shift+3 move container to workspace $ws3
-#bindsym $mod+Shift+4 move container to workspace $ws4
-#bindsym $mod+Shift+5 move container to workspace $ws5
-#bindsym $mod+Shift+6 move container to workspace $ws6
-#bindsym $mod+Shift+7 move container to workspace $ws7
-#bindsym $mod+Shift+8 move container to workspace $ws8
-#bindsym $mod+Shift+9 move container to workspace $ws9
-#bindsym $mod+Shift+0 move container to workspace $ws10
-
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
@@ -174,12 +157,6 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
-
-# Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -222,22 +199,43 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# Set shut down, restart and locking features
-#bindsym $mod+0 mode "$mode_system"
-#set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-#mode "$mode_system" {
-    #bindsym l exec --no-startup-id i3lock -c 000000, mode "default"
-    #bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    #bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    #bindsym e exec --no-startup-id i3exit logout, mode "default"
-    #bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    #bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    #bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+# Mode system
+bindsym $mod+Shift+P mode "$mode_system"
+set $mode_system (l)ock, (h)ibernate, (e)xit
+mode "$mode_system" {
+    bindsym l exec --no-startup-id "dm-tool lock; systemctl suspend", mode "default"
+    bindsym h exec --no-startup-id "dm-tool lock; systemctl hibernate", mode "default"
+    bindsym e exec --no-startup-id "i3-msg exit"
 
     ## exit system mode: "Enter" or "Escape"
-    #bindsym Return mode "default"
-    #bindsym Escape mode "default"
-#}
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Display mode
+bindsym $mod+Shift+M mode "$mode_display"
+set $mode_display (1) Salon, (2) TV, (3) Bureau
+mode "$mode_display" {
+    bindsym 1 exec --no-startup-id ~/.config/shell_config/displays/salon.sh, mode "default"
+    bindsym 2 exec --no-startup-id ~/.config/shell_config/displays/tv.sh, mode "default"
+    bindsym 3 exec --no-startup-id ~/.config/shell_config/displays/bureau.sh, mode "default"
+
+    ## exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Language mode
+bindsym $mod+Shift+N mode "$mode_language"
+set $mode_language (U)s, (C)a
+mode "$mode_language" {
+    bindsym u exec --no-startup-id setxkbmap us, mode "default"
+    bindsym c exec --no-startup-id setxkbmap ca, mode "default"
+
+    ## exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
@@ -263,23 +261,9 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# Lock screen
-#bindsym $mod+9 exec --no-startup-id blurlock
-
 # Autostart applications
-#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-#exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
-#exec --no-startup-id xfce4-power-manager
-#exec --no-startup-id pamac-tray
-#exec --no-startup-id clipit
-#exec --no-startup-id blueman
-# exec_always --no-startup-id sbxkb
-#exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
-#exec --no-startup-id xautolock -time 10 -locker blurlock
-#exec_always --no-startup-id fix_xcursor
+exec --no-startup-id redshift-gtk -l 51.27:57.16
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
@@ -323,23 +307,14 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
 
 client.background       #2B2C2B
 
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
 # Monitor assignment
 workspace $ws1 output eDP1
 workspace $ws2 output eDP1
-workspace $ws3 output DP2-1
-workspace $ws4 output DP2-1
-workspace $ws5 output DP2-1
-workspace $ws6 output DP2-1
-workspace $ws7 output DP2-1
-workspace $ws8 output DP2-1
-workspace $ws9 output DP2-2
-workspace $ws10 output DP2-2
-
-exec --no-startup-id redshift-gtk -l 51.27:57.16
-
-bindsym $mod+Shift+u exec --no-startup-id setxkbmap us
-bindsym $mod+Shift+f exec --no-startup-id setxkbmap ca
+workspace $ws3 output HDMI2
+workspace $ws4 output HDMI2
+workspace $ws5 output HDMI2
+workspace $ws6 output HDMI2
+workspace $ws7 output HDMI2
+workspace $ws8 output HDMI2
+workspace $ws9 output HDMI2
+workspace $ws10 output HDMI2
