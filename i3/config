@@ -212,19 +212,6 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-# Display mode
-bindsym $mod+Shift+M mode "$mode_display"
-set $mode_display (1) Salon, (2) TV, (3) Bureau
-mode "$mode_display" {
-    bindsym 1 exec --no-startup-id ~/.config/shell_config/displays/salon.sh, mode "default"
-    bindsym 2 exec --no-startup-id ~/.config/shell_config/displays/tv.sh, mode "default"
-    bindsym 3 exec --no-startup-id ~/.config/shell_config/displays/bureau.sh, mode "default"
-
-    ## exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
 # Language mode
 bindsym $mod+Shift+N mode "$mode_language"
 set $mode_language (U)s, (C)a
@@ -310,15 +297,3 @@ client.background       #2B2C2B
 ####################################################################################
 ### System specific settings                                                       #
 ####################################################################################
-
-# Monitor assignment
-workspace $ws1 output eDP1
-workspace $ws2 output eDP1
-workspace $ws3 output HDMI2
-workspace $ws4 output HDMI2
-workspace $ws5 output HDMI2
-workspace $ws6 output HDMI2
-workspace $ws7 output HDMI2
-workspace $ws8 output HDMI2
-workspace $ws9 output HDMI2
-workspace $ws10 output HDMI2
