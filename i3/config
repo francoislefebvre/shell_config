@@ -307,6 +307,10 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
 
 client.background       #2B2C2B
 
+####################################################################################
+### System specific settings                                                       #
+####################################################################################
+
 # Monitor assignment
 workspace $ws1 output eDP1
 workspace $ws2 output eDP1
