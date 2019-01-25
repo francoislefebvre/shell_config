@@ -201,9 +201,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Mode system
 bindsym $mod+Shift+P mode "$mode_system"
-set $mode_system (l)ock, (h)ibernate, (e)xit
+set $mode_system (l)ock, (s)uspend, (h)ibernate, (e)xit
 mode "$mode_system" {
-    bindsym l exec --no-startup-id "dm-tool lock; systemctl suspend", mode "default"
+    bindsym l exec --no-startup-id "dm-tool lock", mode "default"
+    bindsym s exec --no-startup-id "dm-tool lock; systemctl suspend", mode "default"
     bindsym h exec --no-startup-id "dm-tool lock; systemctl hibernate", mode "default"
     bindsym e exec --no-startup-id "i3-msg exit"
 
