@@ -215,7 +215,7 @@ mode "$mode_system" {
 
 
 # Language mode
-bindsym $mod+Shift+U exec --no-startup-id "toggle_keyboard_layout.sh; pkill -SIGRTMIN+10 i3blocks"
+bindsym $mod+Shift+U exec --no-startup-id "$HOME/.config/shell_config/bin/toggle_keyboard_layout.sh; pkill -SIGRTMIN+10 i3blocks"
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
