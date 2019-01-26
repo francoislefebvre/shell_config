@@ -257,21 +257,21 @@ bar {
 
 	bindsym button4 nop
 	bindsym button5 nop
-	#font xft:Noto Sans 10.5
+	font xft:Roboto Mono Medium 12
 	strip_workspace_numbers yes
 
 	colors {
-#       background $transparent
-        background #2B2C2B
-        statusline #F9FAF9
-        separator  #454947
+	       #background $transparent
+		background #2B2C2B
+		statusline #F9FAF9
+		separator  #454947
 
-#                                  border  backgr. text
-        focused_workspace  #F9FAF9 #16A085 #2B2C2B
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #353836 #EEE8D5
-        urgent_workspace   #16A085 #FDF6E3 #E5201D
-    }
+                #                  border  backgr. text
+		focused_workspace  #F9FAF9 #8abeb7 #2B2C2B
+		active_workspace   #595B5B #353836 #FDF6E3
+		inactive_workspace #595B5B #353836 #EEE8D5
+		urgent_workspace   #2B2C2B #2B2C2B #f0c674
+	}
 }
 
 # hide/unhide i3status bar
