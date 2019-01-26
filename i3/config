@@ -291,14 +291,21 @@ client.background       #2B2C2B
 ### System specific settings                                                       #
 ####################################################################################
 
+# Displays management
+bindsym $mod+Shift+M exec --no-startup-id refresh-monitors
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
 # Monitor assignment
 workspace $ws1 output eDP1
 workspace $ws2 output eDP1
-workspace $ws3 output HDMI2
-workspace $ws4 output HDMI2
-workspace $ws5 output HDMI2
-workspace $ws6 output HDMI2
-workspace $ws7 output HDMI2
-workspace $ws8 output HDMI2
-workspace $ws9 output HDMI2
-workspace $ws10 output HDMI2
+workspace $ws3 output DP2-1
+workspace $ws4 output DP2-1
+workspace $ws5 output DP2-1
+workspace $ws6 output DP2-1
+workspace $ws7 output DP2-1
+workspace $ws8 output DP2-1
+workspace $ws9 output DP2-2
+workspace $ws10 output DP2-2
