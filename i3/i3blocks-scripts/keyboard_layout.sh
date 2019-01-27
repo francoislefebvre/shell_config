@@ -1,11 +1,11 @@
 #! /bin/sh
-CURRENT_LAYOUT=`setxkbmap -query | gawk '/layout:/ {split($2,layouts,","); print layouts[1]}'`
+CURRENT_LAYOUT=`setxkbmap -query | gawk '/layout:/ {print $2}'`
 
 echo $CURRENT_LAYOUT
 echo $CURRENT_LAYOUT
 
-[ $CURRENT_LAYOUT = "us" ] && echo "#B294BB" && exit 0
-[ $CURRENT_LAYOUT = "ca" ] && echo "#81A2BE"
+[ $CURRENT_LAYOUT = "us" ] && echo "#ff615a" && exit 0
+[ $CURRENT_LAYOUT = "ca" ] && echo "#5da9f6"
 exit 0
 
 
