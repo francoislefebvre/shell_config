@@ -10,7 +10,7 @@ new_float normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:Noto Sans 12
+font xft:Roboto Mono Medium 12
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -267,10 +267,10 @@ bar {
 		separator  #454947
 
                 #                  border  backgr. text
-		focused_workspace  #F9FAF9 #8abeb7 #2B2C2B
+		focused_workspace  #F9FAF9 #9dcbf9 #2B2C2B
 		active_workspace   #595B5B #353836 #FDF6E3
 		inactive_workspace #595B5B #353836 #EEE8D5
-		urgent_workspace   #2B2C2B #2B2C2B #f0c674
+		urgent_workspace   #2B2C2B #2B2C2B #dedacf
 	}
 }
 
@@ -279,11 +279,11 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                 border  backgr. text    indic.  child_border
-#client.focused          #808280 #ff9400 #80FFF9 #FDF6E3
-client.focused          #808280 #16A085 #80FFF9 #FDF6E3
-client.focused_inactive #434745 #434745 #16A085 #454948
-client.unfocused        #434745 #434745 #16A085 #454948
-client.urgent           #CB4B16 #FDF6E3 #16A085 #268BD2
+#client.focused         #808280 #ff9400 #80FFF9 #FDF6E3
+client.focused          #2b2b2b #376593 #2b2b2b #FDF6E3
+client.focused_inactive #434745 #434745 #5da9f6 #454948
+client.unfocused        #434745 #434745 #5da9f6 #454948
+client.urgent           #CB4B16 #FDF6E3 #b7fff9 #268BD2
 client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
 
 client.background       #2B2C2B
