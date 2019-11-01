@@ -1,0 +1,6 @@
+[/]
+focus-active-notification=@as []
+open-application-menu=@as []
+toggle-application-view=['']
+toggle-message-tray=['<Alt>v']
+toggle-overview=['']
